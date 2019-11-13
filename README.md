@@ -13,7 +13,7 @@ NotificationManager.submit(new DesktopNotification("Title", "Description");
 
 If you want to programatically control the display you can keep an instance to do so.
 ```java
-DesktopNotification notif = new DesktopNotification("Title", "Description", int displayTimeInSeconds);
+DesktopNotification notif = new DesktopNotification("Title", "Description");
 NotificationManager.submit(notif);
 notif.setDisplayed(false);
 ```
