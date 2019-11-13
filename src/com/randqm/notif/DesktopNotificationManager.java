@@ -27,6 +27,11 @@ public class DesktopNotificationManager {
 	 */
 	private static List<DesktopNotificationWindow> displayed = new CopyOnWriteArrayList<>();
 	
+	/**
+	 * Whether notifications are disabled or not.
+	 */
+	private static boolean disabled;
+	
 	
 	/**
 	 * Submits a new desktop notification.
@@ -45,6 +50,9 @@ public class DesktopNotificationManager {
 	 * @param defaultAudio Whether to play the default audio if none is specified.
 	 */
 	public static void submit(DesktopNotification notif, boolean defaultAudio) {
+		if (disabled) {
+			return;
+		}
 		DesktopNotificationWindow notifWindow = new DesktopNotificationWindow(notif);
 		notifWindow.setVisible(true);
 		
@@ -92,6 +100,20 @@ public class DesktopNotificationManager {
 				}
 			}
 		}).start();
+	}
+	
+	/**
+	 * Disables the notifications.
+	 */
+	public static void disabled() {
+		disabled = true;
+	}
+	
+	/**
+	 * Enabled the notifications.
+	 */
+	public static void enable() {
+		disabled = false;
 	}
 	
 	/**
