@@ -1,10 +1,19 @@
 # desktop-notifications
 
-A simple desktop notification manager.
-Displays a notification in the left bottom corner of the screen.
+## About
+A simple desktop notification manager that displays a notification in the left bottom corner of the screen.
+Once the ok button is pressed or the notification timed out it will be removed from the screen.
 
-
-//Example usage, display time being an optional parameter.
+## Examples
+The standard way of submitting a notification is the following:
+```java
 NotificationManager.submit(new DesktopNotification("Title", "Description", int displayTimeInSeconds);
+NotificationManager.submit(new DesktopNotification("Title", "Description");
+```
 
-Once display time elapsed or the OK button on the notification is pressed the notification will fade away.
+If you want to programatically control the display you can keep an instance to do so.
+```java
+DesktopNotification notif = new DesktopNotification("Title", "Description", int displayTimeInSeconds);
+NotificationManager.submit(notif);
+notif.setDisplayed(false);
+```
