@@ -106,7 +106,7 @@ public class DesktopNotificationWindow extends JWindow {
 		okButton.setBounds(190, 84, 100, 25);
 		panel.add(okButton);
 		
-		JLabel titleLabel = new JLabel("Title");
+		JLabel titleLabel = new JLabel(notif.getTitle());
 		titleLabel.addMouseListener(mouseAdapter);
 		titleLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
 		titleLabel.setBounds(10, 11, 280, 14);
@@ -115,7 +115,7 @@ public class DesktopNotificationWindow extends JWindow {
 		JTextArea txtrAlo = new JTextArea();
 		txtrAlo.addMouseListener(mouseAdapter);
 		txtrAlo.setEditable(false);
-		txtrAlo.setText("alo");
+		txtrAlo.setText(notif.getDescription());
 		txtrAlo.setBackground(titleLabel.getBackground());
 		txtrAlo.setForeground(titleLabel.getForeground());
 		txtrAlo.setBorder(titleLabel.getBorder());
