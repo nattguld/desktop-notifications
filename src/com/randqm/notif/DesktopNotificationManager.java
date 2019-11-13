@@ -105,7 +105,7 @@ public class DesktopNotificationManager {
 	/**
 	 * Disables the notifications.
 	 */
-	public static void disabled() {
+	public static void disable() {
 		disabled = true;
 	}
 	
@@ -114,6 +114,15 @@ public class DesktopNotificationManager {
 	 */
 	public static void enable() {
 		disabled = false;
+	}
+	
+	/**
+	 * Retrieves whether notifications are disabled or not.
+	 * 
+	 * @return The result.
+	 */
+	public static boolean isDisabled() {
+		return disabled;
 	}
 	
 	/**
