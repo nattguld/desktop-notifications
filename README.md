@@ -7,6 +7,9 @@ This repository uses the following dependencies:
 ## About
 A simple desktop notification manager that displays a notification in the left bottom corner of the screen.
 Once the ok button is pressed or the notification timed out it will be removed from the screen.
+The notification shows partly transparent as long as there's no focus of the user.
+
+![Alt text](https://i.imgur.com/Gtw2s5m.png "")
 
 ## Examples
 The standard way of submitting a notification is the following:
@@ -45,11 +48,11 @@ You can also override this behavior with your own implementation or add custom i
 ```java
 new DesktopNotification("title", "description").setProgressHandler(new IProgressBarHandler() {
   @Override
-	public void onStart() {} //Executed before the progress bar starts updating
+  public void onStart() {} //Executed before the progress bar starts updating
   @Override
-	public void onFinish() {} //Executed once the progress bar finished updating
+  public void onFinish() {} //Executed once the progress bar finished updating
   @Override
-	public int getProgressValue() {} //The current progress value (0-100)
+  public int getProgressValue() {} //The current progress value (0-100)
   @Override
   public boolean isFinished() {} //Whether updating should be finished or not
   @Override
