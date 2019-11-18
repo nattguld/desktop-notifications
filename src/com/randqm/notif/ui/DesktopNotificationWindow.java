@@ -5,6 +5,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JWindow;
 
 import com.randqm.notif.DesktopNotification;
+import com.randqm.notif.progress.ProgressBarUpdater;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -18,6 +19,7 @@ import java.awt.Insets;
 import java.awt.Toolkit;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JProgressBar;
 
 /**
  * 
@@ -127,6 +129,17 @@ public class DesktopNotificationWindow extends JWindow {
 		scroll.addMouseListener(mouseAdapter);
 		scroll.setBounds(10, 36, 280, 37);
 		panel.add(scroll);
+		
+		JProgressBar progressBar = new JProgressBar();
+		progressBar.setVisible(false);
+		progressBar.setMaximum(100);
+		progressBar.setMinimum(0);
+		progressBar.setBounds(10, 95, 170, 14);
+		panel.add(progressBar);
+		
+		if (notif.hasProgressHandler()) {
+			ProgressBarUpdater.submitHandler(progressBar, notif.getProgressHandler());
+		}
 	}
 	
 	@Override
