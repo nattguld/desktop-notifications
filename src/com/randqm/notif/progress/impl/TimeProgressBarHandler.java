@@ -1,4 +1,6 @@
-package com.randqm.notif.progress;
+package com.randqm.notif.progress.impl;
+
+import com.randqm.notif.progress.IProgressBarHandler;
 
 /**
  * 

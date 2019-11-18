@@ -4,7 +4,7 @@ import java.net.URL;
 import java.util.Objects;
 
 import com.randqm.notif.progress.IProgressBarHandler;
-import com.randqm.notif.progress.TimeProgressBarHandler;
+import com.randqm.notif.progress.impl.TimeProgressBarHandler;
 
 /**
  * 
