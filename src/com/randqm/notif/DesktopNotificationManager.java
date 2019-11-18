@@ -53,6 +53,9 @@ public class DesktopNotificationManager {
 		if (disabled) {
 			return;
 		}
+		if (notificationExists(notif.getTitle(), notif.getDescription(), notif.getDisplayTime())) {
+			return;
+		}
 		DesktopNotificationWindow notifWindow = new DesktopNotificationWindow(notif);
 		notifWindow.setVisible(true);
 		
@@ -133,6 +136,24 @@ public class DesktopNotificationManager {
 			notifWindow.dispose();
 		}
 		displayed.clear();
+	}
+	
+	/**
+	 * Retrieves whether a notification exists with given parameters.
+	 * 
+	 * @param title The title.
+	 * 
+	 * @param description The description.
+	 * 
+	 * @param displayTime the display time.
+	 * 
+	 * @return The result.
+	 */
+	public static boolean notificationExists(String title, String description, int displayTime) {
+		return displayed.stream()
+				.anyMatch(n -> n.getNotification().getTitle().equals(title)
+				&& n.getNotification().getDescription().equals(description)
+				&& n.getNotification().getDisplayTime() == displayTime);
 	}
 
 }
