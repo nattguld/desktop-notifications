@@ -7,7 +7,7 @@ This repository uses the following dependencies:
 ## About
 A simple desktop notification manager that displays a notification in the left bottom corner of the screen.
 Once the ok button is pressed or the notification timed out it will be removed from the screen.
-The notification shows partly transparent as long as there's no focus of the user.
+The notification shows partly transparent as long as there's no focus of the user. There is no built-in themes, the notification will fallback to the UI layout of your application.
 
 ![Alt text](https://i.imgur.com/Gtw2s5m.png "")
 
